@@ -4,10 +4,10 @@ MAINTAINER michaelmartinez@me.com
 
 WORKDIR /src
 
-RUN apt-get install python-software-properties && \
+RUN apt-get update && \
+	apt-get install -y python-software-properties && \
 	add-apt-repository ppa:ubuntu-toolchain-r/test && \
-	apt-get update && \
-	apt-get install gcc-4.8 g++-4.8 && \
+	apt-get install -y gcc-4.8 g++-4.8 && \
 	update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8 && \
 	git clone --depth 1 https://github.com/facebook/infer.git $HOME/infer && \
 	cd $HOME/infer && \
