@@ -1,4 +1,4 @@
-FROM gcc:4.7.4
+FROM gcc:4.8
 
 MAINTAINER michaelmartinez@me.com
 
