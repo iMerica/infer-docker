@@ -9,10 +9,8 @@ RUN sudo apt-get install python-software-properties && \
 	sudo apt-get update && \
 	sudo apt-get install gcc-4.8 g++-4.8 && \
 	sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8 && \
-	git clone https://github.com/facebook/infer.git /src/infer
-
-
-RUN cd /src/infer && \
+	git clone --depth 1 https://github.com/facebook/infer.git /tmp/infer && \
+	cd /tmp/infer && \
 	./update-fcp.sh && \
 	../facebook-clang-plugin/clang/setup.sh && \
 	./compile-fcp.sh && \
