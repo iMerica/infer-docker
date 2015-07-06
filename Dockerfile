@@ -12,6 +12,6 @@ RUN apt-get update && \
 	./update-fcp.sh && \
 	../facebook-clang-plugin/clang/setup.sh && \
 	./compile-fcp.sh && \
-	make -C infer 
+	make -C . 
 
 ENV PATH $HOME/infer/bin:$PATH
